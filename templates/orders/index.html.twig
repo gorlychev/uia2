@@ -1,0 +1,37 @@
+ 
+
+
+{% block title %}Hello OrdersController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+<table>
+    {% set columns = 3 %}
+    {% for order in pagination %}
+        <tr>
+
+            <td>{{ order.id }}</td>
+            <td>{{ order.name }}</td>
+            <td>{{ order.firstName }}</td>
+            <td>{{ order.lastName }}</td>
+            
+            
+        </tr>
+
+    {% endfor %}
+    </table> 
+   <div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
+{% endblock %}
